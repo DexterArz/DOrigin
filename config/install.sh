@@ -63,6 +63,7 @@ fi
 info "Installing required dependencies..."
 
 sudo pacman -S --needed --noconfirm \
+    nerd-fonts \
     base-devel \
     git \
     fakeroot \
