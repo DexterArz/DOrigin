@@ -7,7 +7,6 @@ set -e
 # ============================================================
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-HOME_DIR="$HOME"
 BACKUP_DIR="$HOME/config-backup"
 PKG_FILE="$DOTFILES_DIR/pkg.md"
 
@@ -58,17 +57,45 @@ if ! command -v sudo &>/dev/null; then
 fi
 
 # ------------------------------------------------------------
+# Install required dependencies
+# ------------------------------------------------------------
+
+info "Installing required dependencies..."
+
+sudo pacman -S --needed --noconfirm \
+    base-devel \
+    git \
+    fakeroot \
+    debugedit \
+    pkgconf \
+    gtk3 \
+    cmake
+
+success "Required dependencies installed."
+
+# ------------------------------------------------------------
 # Install yay
 # ------------------------------------------------------------
 
 if command -v yay &>/dev/null; then
+
     success "yay is already installed."
+
 else
+
     info "yay not found. Installing yay..."
 
     TEMP_DIR="$(mktemp -d)"
 
-    git clone https://aur.archlinux.org/yay.git "$TEMP_DIR/yay"
+    cleanup() {
+        rm -rf "$TEMP_DIR"
+    }
+
+    trap cleanup EXIT
+
+    git clone \
+        https://aur.archlinux.org/yay.git \
+        "$TEMP_DIR/yay"
 
     cd "$TEMP_DIR/yay"
 
@@ -76,19 +103,22 @@ else
 
     cd "$DOTFILES_DIR"
 
-    rm -rf "$TEMP_DIR"
-
     success "yay installed."
+
 fi
 
 # ------------------------------------------------------------
-# Install packages
+# Check pkg.md
 # ------------------------------------------------------------
 
 if [[ ! -f "$PKG_FILE" ]]; then
     error "pkg.md not found!"
     exit 1
 fi
+
+# ------------------------------------------------------------
+# Read packages from pkg.md
+# ------------------------------------------------------------
 
 info "Reading packages from pkg.md..."
 
@@ -109,23 +139,34 @@ while IFS= read -r line; do
 
 done < "$PKG_FILE"
 
+# ------------------------------------------------------------
+# Install packages
+# ------------------------------------------------------------
+
 if [[ ${#PACKAGES[@]} -gt 0 ]]; then
+
     info "Installing packages..."
 
     yay -S --needed --noconfirm "${PACKAGES[@]}"
 
     success "Packages installed."
+
 else
+
     warning "No packages found in pkg.md."
+
 fi
 
 # ------------------------------------------------------------
 # Create backup directory
 # ------------------------------------------------------------
 
+TIMESTAMP="$(date '+%Y-%m-%d_%H-%M-%S')"
+BACKUP_PATH="$BACKUP_DIR/$TIMESTAMP"
+
 info "Preparing configuration backup..."
 
-mkdir -p "$BACKUP_DIR"
+mkdir -p "$BACKUP_PATH"
 
 # ------------------------------------------------------------
 # Backup existing configurations
@@ -135,31 +176,27 @@ backup_directory() {
 
     local source="$1"
     local name="$2"
-    local destination="$BACKUP_DIR/$name"
+    local destination="$BACKUP_PATH/$name"
 
     if [[ -e "$source" ]]; then
 
-        if [[ -e "$destination" ]]; then
-            warning "$destination already exists."
-
-            # Create timestamped backup
-            timestamp="$(date '+%Y-%m-%d_%H-%M-%S')"
-            destination="$BACKUP_DIR/${name}_${timestamp}"
-        fi
-
-        info "Backing up $source -> $destination"
+        info "Backing up $source"
 
         cp -a "$source" "$destination"
 
         success "Backed up $name."
+
     else
+
         info "$source does not exist. Nothing to back up."
+
     fi
 }
 
 backup_directory "$HOME/.config" ".config"
 backup_directory "$HOME/.local" ".local"
 backup_directory "$HOME/.themes" ".themes"
+backup_directory "$HOME/.vscode-oss" ".vscode-oss"
 
 # ------------------------------------------------------------
 # Copy dotfiles
@@ -179,14 +216,18 @@ copy_directory() {
         cp -a "$source/." "$destination/"
 
         success "$1 copied."
+
     else
+
         warning "$source does not exist. Skipping."
+
     fi
 }
 
 copy_directory ".config"
 copy_directory ".local"
 copy_directory ".themes"
+copy_directory ".vscode-oss"
 
 # ------------------------------------------------------------
 # Finished
@@ -194,9 +235,11 @@ copy_directory ".themes"
 
 echo
 echo -e "${GREEN}========================================${RESET}"
-echo -e "${GREEN}      Dotfiles installation complete    ${RESET}"
+echo -e "${GREEN}     Dotfiles installation complete     ${RESET}"
 echo -e "${GREEN}========================================${RESET}"
 echo
+
 echo "Dotfiles: $DOTFILES_DIR"
-echo "Backup:   $BACKUP_DIR"
+echo "Backup:   $BACKUP_PATH"
+
 echo
