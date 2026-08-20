@@ -1,0 +1,21 @@
+{
+  "include": [
+    "modules/clock.jsonc",
+    "modules/battery.jsonc",
+    "modules/media.jsonc",
+    "modules/audio.jsonc",
+    "modules/power.jsonc",
+    "modules/network.jsonc",
+    "modules/inhibitor.jsonc",
+    "modules/notification.jsonc"
+  ],
+  "width": 395,
+  "margin-top": 7,
+  "layer": "top",
+  
+  "modules-center": [
+    "custom/media",
+    "clock",
+    "idle_inhibitor"
+  ]
+}

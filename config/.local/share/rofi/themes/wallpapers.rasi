@@ -1,0 +1,104 @@
+/*****----- Configuration -----*****/
+configuration {
+    modi:                        "drun";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    font:                        "JetBrainsMono Nerd Font 9";
+    hover-select:                true;
+}
+
+/*****----- Global Properties -----*****/
+@import                          "../colors/colors.rasi"
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    south;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       50%;
+    height:                      310px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               41px 41px 0px 0px ;
+    background-color:            @bg0;
+    cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     21px 21px 21px 21px; /* Centers the listview */
+    border:                      0px;
+    background-color:            transparent;
+    children:                    [ "listview" ];
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                false;
+    fixed-columns:               false;
+    
+    spacing:                     40px; /* Space between wallpaper cards */
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               21px;
+    background-color:            transparent;
+    text-color:                  @text;
+    orientation:                 vertical;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @text;
+}
+
+element selected.normal {
+    background-color:            @bg2; 
+    text-color:                  @blue; 
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        220px; /* Tall portrait size */
+    cursor:                      inherit;
+    border-radius:               21px;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    padding:                     15px 0px;
+}

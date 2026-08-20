@@ -1,0 +1,6 @@
+{
+    "clock": {
+        "format": "{:%I\n%M}",
+        "tooltip": false
+    }
+}

@@ -1,0 +1,69 @@
+[config.wallpaper]
+command = "awww"
+arguments = ["img", "--transition-type", "center"]
+set = false
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/colors/custom/matugen.lua'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors/custom/matugen.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.wlogout]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/wlogout/styles/colors.css'
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/swaync/matugen/colors.css'
+post_hook = 'swaync-client -rs'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/launchers/shared/matugen.rasi'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors/matugen.conf'
+post_hook = 'kill -SIGUSR1 $(pgrep kitty)'
+
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/matugen-gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/matugen-gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+
+
+
+[config.custom_colors]
+
+bg0    = { color = "#121212", blend = false }
+bg1    = { color = "#1e1e1e", blend = false }
+bg2    = { color = "#2a2a2a", blend = false }
+bg3    = { color = "#333333", blend = false }
+bg4    = { color = "#444444", blend = false }
+
+fg     = { color = "#e6e6e6", blend = false }
+
+red    = { color = "#b0a0a5", blend = false }
+orange = { color = "#b0a8a0", blend = false }
+yellow = { color = "#b0ada0", blend = false }
+green  = { color = "#a5b0a0", blend = false }
+aqua   = { color = "#9cb0ad", blend = false }
+blue   = { color = "#9ca8b0", blend = false }
+purple = { color = "#a89cb0", blend = false }
+
+grey0  = { color = "#555a60", blend = false }
+grey1  = { color = "#888c94", blend = false }
+grey2  = { color = "#b9bdc2", blend = false }

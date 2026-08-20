@@ -1,0 +1,188 @@
+@import "colors/colors.css";
+
+* {
+    all: unset;
+    font-family: 'JetBrainsMono Nerd Font propo';
+    font-weight: 800;
+}
+
+window#waybar {
+    background-color: alpha(@bg0 , 0.85);
+    color: @fg;
+    border-radius: 21 21;
+
+}
+
+.modules-right {
+    border-radius: 21 21;
+    padding: 7 5;
+}
+
+.modules-center {
+    border-radius: 21 21;
+    padding: 7 5;
+}
+
+.modules-left {
+    border-radius: 21 21;
+    padding: 7 5;
+}
+
+
+#workspaces {
+    /* background: #000; */
+    padding: 7 0;
+}
+
+#workspaces button {
+    font-size: 6;
+    color:transparent;    
+    background: @bg4;
+    padding: 2 4;
+    margin: 4 5;
+    border-radius: 21;
+    transition: padding 0.25s cubic-bezier(.22, 1.28, .36, 1.0);
+}
+
+#workspaces button.active {
+    padding: 14 0;
+    background: @fg;
+}
+
+
+#custom-media {
+
+    background: linear-gradient(45deg,
+            alpha(@red, 0.75) 0%,
+            alpha(@orange, 0.75) 14.2%,
+            alpha(@yellow, 0.75) 28.4%,
+            alpha(@green, 0.75) 42.6%,
+            alpha(@aqua, 0.75) 62.8%,
+            alpha(@blue, 0.75) 77%,
+            alpha(@purple, 0.75) 91.2%);
+    border-radius: 21;
+    padding: 7 0;
+    color: @bg0;
+}
+
+#clock {
+    color: @purple;
+    padding: 5 0;
+    font-weight: 900;
+    border-bottom: 1px solid @bg4;
+}
+
+#power-profiles-daemon {
+
+    border-radius: 21;
+    padding: 5 0;
+    color: @orange;
+    margin: 0 3;
+
+
+}
+
+#battery {
+
+    border-radius: 21;
+    padding: 5 0;
+    color: @yellow;
+    margin:  3 0;
+
+}
+
+#audio {
+    border-radius: 21;
+    padding: 5 0;
+    color: @purple;
+    margin:  3 0;
+}
+
+
+#pulseaudio-slider {
+    margin: 0 8px;
+}
+
+#pulseaudio-slider slider {
+    min-width: 0;
+    min-height: 0;
+    opacity: 0;
+
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 56px;
+    min-width: 6px;
+
+    border-radius: 99px;
+    background-color: @bg4;
+}
+
+#pulseaudio-slider highlight {
+    border-radius: 99px;
+    background: @purple;
+}
+
+#pulseaudio-slider.muted highlight {
+    background: @red;
+}
+
+#network {
+    border-radius: 21;
+    padding: 5 0;
+    color: @green;
+    margin:  3 0;
+
+}
+
+
+#bluetooth {
+    margin:  3 0;
+    border-radius: 21;
+    padding: 5 0;
+    color: @aqua;
+
+}
+
+#custom-notification {
+    color: @red;
+    margin:  3 0;
+    border-radius: 21;
+    padding: 5 0;
+}
+
+#idle_inhibitor {
+    color: @blue;
+    margin:  3 0;
+    border-radius: 21;
+    padding: 5 0;
+}
+
+#power {
+    color: @red;
+    margin:  3 0;
+    border-top: 1px solid @bg4;
+    padding: 5 0;
+}
+
+#custom-reboot,
+#custom-quit,
+#custom-lock,
+#custom-poower {
+    padding: 4 0;
+    color: @orange;
+}
+
+tooltip {
+    background: alpha(@bg0 , 0.95);
+    border: 1px solid @blue;
+    border-radius: 99;
+}
+
+tooltip label {
+    padding: 5 0;
+    color: @purple;
+}
