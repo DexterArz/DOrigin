@@ -13,6 +13,11 @@ return {
     end,
   },
 
+  {
+    "neovim/nvim-lspconfig",
+    version = "v2.*", -- Pin to v2.x until NvChad updates
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 

@@ -4,7 +4,7 @@
 
 -- Set programs that you use
 local terminal        = "kitty"
-local fileManager     = "dolphin"
+local fileManager     = "nautilus"
 local menu            = "pkill rofi || ~/.config/rofi/launchers/type-1/launcher.sh"
 local swaync          = "swaync-client -t -sw"
 local waybar          = "pkill waybar  ||  waybar &"
