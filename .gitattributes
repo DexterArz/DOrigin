@@ -1,2 +1,4 @@
 *.css linguist-vendored
 *.rasi linguist-vendored
+*.sh linguist-language=Shell
+*.conf linguist-language=INI
