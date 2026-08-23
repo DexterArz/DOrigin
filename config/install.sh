@@ -14,8 +14,8 @@ PKG_FILE="$DOTFILES_DIR/pkg.md"
 # External repositories
 # ------------------------------------------------------------
 
-THEMES_REPO="https://github.com/YOUR_USERNAME/DOrigin-themes.git"
-VSCODE_REPO="https://github.com/YOUR_USERNAME/DOrigin-vscode.git"
+THEMES_REPO="https://github.com/DexterArz/Gtk-themes.git"
+VSCODE_REPO="https://github.com/DexterArz/vs-code-themes.git"
 
 THEMES_REPO_DIR="$HOME/.local/share/DOrigin-themes"
 VSCODE_REPO_DIR="$HOME/.local/share/DOrigin-vscode"
