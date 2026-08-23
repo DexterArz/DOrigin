@@ -14,11 +14,11 @@ PKG_FILE="$DOTFILES_DIR/pkg.md"
 # External repositories
 # ------------------------------------------------------------
 
-THEMES_REPO="https://github.com/DexterArz/Gtk-themes.git"
 VSCODE_REPO="https://github.com/DexterArz/vs-code-themes.git"
+GTK_REPO="https://github.com/DexterArz/Gtk-themes.git"
 
-THEMES_REPO_DIR="$HOME/.local/share/DOrigin-themes"
-VSCODE_REPO_DIR="$HOME/.local/share/DOrigin-vscode"
+VSCODE_REPO_DIR="$HOME/.local/share/DOrigin-vs-code-themes"
+GTK_REPO_DIR="$HOME/.local/share/DOrigin-gtk-themes"
 
 # ------------------------------------------------------------
 # Colors
@@ -137,7 +137,6 @@ PACKAGES=()
 
 while IFS= read -r line; do
 
-    # Remove leading/trailing whitespace
     line="$(echo "$line" | xargs)"
 
     # Ignore empty lines
@@ -206,12 +205,14 @@ backup_directory() {
 
 backup_directory "$HOME/.config" ".config"
 backup_directory "$HOME/.local" ".local"
+backup_directory "$HOME/.themes" ".themes"
+backup_directory "$HOME/.vscode-oss" ".vscode-oss"
 
 # ------------------------------------------------------------
 # Install main .config
 # ------------------------------------------------------------
 
-CONFIG_SOURCE="$DOTFILES_DIR/.config"
+CONFIG_SOURCE="$DOTFILES_DIR/config/.config"
 
 if [[ -d "$CONFIG_SOURCE" ]]; then
 
@@ -227,6 +228,24 @@ else
 
     error "$CONFIG_SOURCE does not exist."
     exit 1
+
+fi
+
+# ------------------------------------------------------------
+# Install .local
+# ------------------------------------------------------------
+
+LOCAL_SOURCE="$DOTFILES_DIR/config/.local"
+
+if [[ -d "$LOCAL_SOURCE" ]]; then
+
+    info "Installing .local..."
+
+    mkdir -p "$HOME/.local"
+
+    cp -a "$LOCAL_SOURCE/." "$HOME/.local/"
+
+    success ".local installed."
 
 fi
 
@@ -268,58 +287,58 @@ clone_or_update_repo() {
 }
 
 # ------------------------------------------------------------
-# Install Themes
+# Install GTK themes
 # ------------------------------------------------------------
 
 clone_or_update_repo \
-    "$THEMES_REPO" \
-    "$THEMES_REPO_DIR" \
-    "Themes repository"
+    "$GTK_REPO" \
+    "$GTK_REPO_DIR" \
+    "GTK themes repository"
 
-THEMES_SOURCE="$THEMES_REPO_DIR/.themes"
+GTK_SOURCE="$GTK_REPO_DIR/themes/.themes"
 
-if [[ -d "$THEMES_SOURCE" ]]; then
+if [[ -d "$GTK_SOURCE" ]]; then
 
-    info "Installing themes..."
+    info "Installing GTK themes..."
 
     mkdir -p "$HOME/.themes"
 
-    cp -a "$THEMES_SOURCE/." "$HOME/.themes/"
+    cp -a "$GTK_SOURCE/." "$HOME/.themes/"
 
-    success "Themes installed."
+    success "GTK themes installed."
 
 else
 
-    warning "$THEMES_SOURCE does not exist."
-    warning "Skipping themes."
+    warning "$GTK_SOURCE does not exist."
+    warning "Skipping GTK themes."
 
 fi
 
 # ------------------------------------------------------------
-# Install VS Code
+# Install VS Code themes
 # ------------------------------------------------------------
 
 clone_or_update_repo \
     "$VSCODE_REPO" \
     "$VSCODE_REPO_DIR" \
-    "VS Code repository"
+    "VS Code themes repository"
 
-VSCODE_SOURCE="$VSCODE_REPO_DIR/.vs"
+VSCODE_SOURCE="$VSCODE_REPO_DIR/themes/.vscode-oss"
 
 if [[ -d "$VSCODE_SOURCE" ]]; then
 
-    info "Installing VS Code configuration..."
+    info "Installing VS Code themes..."
 
-    mkdir -p "$HOME/.vs"
+    mkdir -p "$HOME/.vscode-oss"
 
-    cp -a "$VSCODE_SOURCE/." "$HOME/.vs/"
+    cp -a "$VSCODE_SOURCE/." "$HOME/.vscode-oss/"
 
-    success "VS Code configuration installed."
+    success "VS Code themes installed."
 
 else
 
     warning "$VSCODE_SOURCE does not exist."
-    warning "Skipping VS Code configuration."
+    warning "Skipping VS Code themes."
 
 fi
 
@@ -337,7 +356,7 @@ echo
 
 echo "Config:  $CONFIG_SOURCE"
 echo "Themes:  $HOME/.themes"
-echo "VS Code: $HOME/.vs"
+echo "VS Code: $HOME/.vscode-oss"
 echo "Backup:  $BACKUP_PATH"
 
 echo
