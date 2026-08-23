@@ -14,8 +14,8 @@ PKG_FILE="$DOTFILES_DIR/pkg.md"
 # External repositories
 # ------------------------------------------------------------
 
-THEMES_REPO="https://github.com/DexterArz/Gtk-themes.git"
-VSCODE_REPO="https://github.com/DexterArz/vs-code-themes.git"
+THEMES_REPO="https://github.com/YOUR_USERNAME/DOrigin-themes.git"
+VSCODE_REPO="https://github.com/YOUR_USERNAME/DOrigin-vscode.git"
 
 THEMES_REPO_DIR="$HOME/.local/share/DOrigin-themes"
 VSCODE_REPO_DIR="$HOME/.local/share/DOrigin-vscode"
@@ -137,6 +137,7 @@ PACKAGES=()
 
 while IFS= read -r line; do
 
+    # Remove leading/trailing whitespace
     line="$(echo "$line" | xargs)"
 
     # Ignore empty lines
@@ -204,13 +205,13 @@ backup_directory() {
 }
 
 backup_directory "$HOME/.config" ".config"
-backup_directory "$HOME/.local"
+backup_directory "$HOME/.local" ".local"
 
 # ------------------------------------------------------------
-# Copy main .config
+# Install main .config
 # ------------------------------------------------------------
 
-CONFIG_SOURCE="$DOTFILES_DIR/config/.config"
+CONFIG_SOURCE="$DOTFILES_DIR/.config"
 
 if [[ -d "$CONFIG_SOURCE" ]]; then
 
@@ -267,7 +268,7 @@ clone_or_update_repo() {
 }
 
 # ------------------------------------------------------------
-# Themes
+# Install Themes
 # ------------------------------------------------------------
 
 clone_or_update_repo \
@@ -295,7 +296,7 @@ else
 fi
 
 # ------------------------------------------------------------
-# VS Code
+# Install VS Code
 # ------------------------------------------------------------
 
 clone_or_update_repo \
