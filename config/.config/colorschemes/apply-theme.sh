@@ -135,7 +135,7 @@ echo ""
 
 # Rofi theme
 echo -e "${CYAN}-> Applying Rofi theme...${NC}"
-cp "$THEME_DIR/rofi/colors.rasi" "$HOME/.local/share/rofi/colors/colors.rasi" > /dev/null 2>&1
+cp "$THEME_DIR/rofi/colors.rasi" "$HOME/.config/rofi/colors/colors.rasi" > /dev/null 2>&1
 echo ""
 
 # NvChad theme
