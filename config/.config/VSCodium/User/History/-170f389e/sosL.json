@@ -1,0 +1,21 @@
+{
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.statusBar.visible": false,
+  "window.zoomLevel": 1,
+  "window.customMenuBarAltFocus": false,
+  "window.enableMenuBarMnemonics": false,
+  "window.menuStyle": "custom",
+  "window.customTitleBarVisibility": "never",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.browser.showInTitleBar": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "native",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Propo",
+  "editor.padding.bottom": 17,
+  "editor.padding.top": 17
+}

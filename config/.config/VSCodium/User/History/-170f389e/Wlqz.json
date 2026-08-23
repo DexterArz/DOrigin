@@ -1,0 +1,15 @@
+{
+  "workbench.colorTheme": "Monochrome Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.statusBar.visible": false,
+  "window.zoomLevel": 1,
+  "window.customMenuBarAltFocus": false,
+  "window.enableMenuBarMnemonics": false,
+  "window.menuStyle": "native",
+  "window.menuBarVisibility": "hidden",
+  "window.customTitleBarVisibility": "never",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "window.titleBarStyle": "native",
+  "workbench.browser.showInTitleBar": false
+}
