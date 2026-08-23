@@ -13,7 +13,7 @@ fi
 
 # List only non-hidden directories
 mapfile -t themes < <(
-    find "$THEME_DIR" \
+    find -L "$THEME_DIR" \
         -mindepth 1 \
         -maxdepth 1 \
         -type d \
