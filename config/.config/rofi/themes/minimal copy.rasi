@@ -5,7 +5,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "~/.local/share/rofi/colors/colors.rasi"
+@import "~/.config/rofi/colors/colors.rasi"
 
 * {
     background-color:           transparent;

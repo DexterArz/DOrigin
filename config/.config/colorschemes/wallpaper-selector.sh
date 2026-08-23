@@ -58,7 +58,7 @@ selected=$(
         -i \
         -p "Select Wallpaper" \
         -show-icons \
-        -theme ~/.local/share/rofi/themes/wallpapers.rasi
+        -theme ~/.config/rofi/themes/wallpapers.rasi
         # -theme ~/WallSelect.rasi
 
 )

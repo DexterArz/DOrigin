@@ -5,20 +5,24 @@
 -- Set programs that you use
 local terminal        = "kitty"
 local fileManager     = "nautilus"
-local menu            = "pkill rofi || ~/.config/rofi/launchers/type-1/launcher.sh"
 local swaync          = "swaync-client -t -sw"
 local waybar          = "pkill waybar  ||  waybar &"
 local killSwayNC      = "pkill swaync || swaync &"
 local browser         = "brave-origin"
 local lockscreen      = "hyprlock"
+
+
+local menu            = "pkill rofi || ~/.config/rofi/launchers/type-1/launcher.sh"
 local waybarSwitch    = "pkill rofi || ~/.config/waybar/scripts/waybar-layout-switcher"
 local themeSwitch     = "pkill rofi || ~/.config/colorschemes/rofi-launcher.sh"
 local animationSwitch     = "pkill rofi || ~/.config/hypr/scripts/animations-switch.sh"
-local directionSwitch     = "pkill rofi || ~/.config/hypr/scripts/decoration-switch.sh"
+local decorationSwitch     = "pkill rofi || ~/.config/hypr/scripts/decoration-switch.sh"
 local wallpaperSwitch = "pkill rofi || ~/.config/colorschemes/wallpaper-selector.sh"
 local layoutSwitch = "pkill rofi || ~/.config/hypr/scripts/layout-switch.sh"
 local screenshot = "hyprshot -m output -m HDMI-A-1"
 local powermenu = "wlogout -l .config/wlogout/layout -C .config/wlogout/theme.css -b 5 -p layer-shell -B 400 -T 400"
+
+
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
@@ -46,7 +50,7 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lockscreen))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(themeSwitch))
 hl.bind(mainMod .. " +SHIFT + W", hl.dsp.exec_cmd(waybarSwitch))
 hl.bind(mainMod .. " +SHIFT + A", hl.dsp.exec_cmd(animationSwitch))
-hl.bind(mainMod .. " +SHIFT + T", hl.dsp.exec_cmd(directionSwitch))
+hl.bind(mainMod .. " +SHIFT + T", hl.dsp.exec_cmd(decorationSwitch))
 hl.bind(mainMod .. " +SHIFT + L", hl.dsp.exec_cmd(layoutSwitch))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(wallpaperSwitch))
 hl.bind(" +CTRL +ALT +DELETE ", hl.dsp.exec_cmd(powermenu))

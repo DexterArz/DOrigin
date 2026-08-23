@@ -58,7 +58,7 @@ chosen=$(
         rofi -dmenu \
             -i \
             -p "Select layout" \
-            -theme ~/.local/share/rofi/themes/Launcher.rasi |
+            -theme ~/.config/rofi/themes/Launcher.rasi |
         sed 's/^| //; s/^  //'
 )
 
