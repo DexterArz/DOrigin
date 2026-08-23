@@ -14,11 +14,11 @@ PKG_FILE="$DOTFILES_DIR/pkg.md"
 # External repositories
 # ------------------------------------------------------------
 
-VSCODE_REPO="https://github.com/DexterArz/vs-code-themes.git"
 GTK_REPO="https://github.com/DexterArz/Gtk-themes.git"
+VSCODE_REPO="https://github.com/DexterArz/vs-code-themes.git"
 
+GTK_REPO_DIR="$HOME/.local/share/DOrigin-Gtk-themes"
 VSCODE_REPO_DIR="$HOME/.local/share/DOrigin-vs-code-themes"
-GTK_REPO_DIR="$HOME/.local/share/DOrigin-gtk-themes"
 
 # ------------------------------------------------------------
 # Colors
@@ -137,6 +137,7 @@ PACKAGES=()
 
 while IFS= read -r line; do
 
+    # Remove leading/trailing whitespace
     line="$(echo "$line" | xargs)"
 
     # Ignore empty lines
@@ -209,10 +210,10 @@ backup_directory "$HOME/.themes" ".themes"
 backup_directory "$HOME/.vscode-oss" ".vscode-oss"
 
 # ------------------------------------------------------------
-# Install main .config
+# Install .config
 # ------------------------------------------------------------
 
-CONFIG_SOURCE="$DOTFILES_DIR/config/.config"
+CONFIG_SOURCE="$DOTFILES_DIR/.config"
 
 if [[ -d "$CONFIG_SOURCE" ]]; then
 
@@ -235,7 +236,7 @@ fi
 # Install .local
 # ------------------------------------------------------------
 
-LOCAL_SOURCE="$DOTFILES_DIR/config/.local"
+LOCAL_SOURCE="$DOTFILES_DIR/.local"
 
 if [[ -d "$LOCAL_SOURCE" ]]; then
 
@@ -287,7 +288,7 @@ clone_or_update_repo() {
 }
 
 # ------------------------------------------------------------
-# Install GTK themes
+# GTK Themes
 # ------------------------------------------------------------
 
 clone_or_update_repo \
@@ -315,7 +316,7 @@ else
 fi
 
 # ------------------------------------------------------------
-# Install VS Code themes
+# VS Code Themes
 # ------------------------------------------------------------
 
 clone_or_update_repo \
