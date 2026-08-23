@@ -3,12 +3,22 @@
 set -e
 
 # ============================================================
-# Dotfiles Installer
+# DOrigin Config Installer
 # ============================================================
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BACKUP_DIR="$HOME/config-backup"
 PKG_FILE="$DOTFILES_DIR/pkg.md"
+
+# ------------------------------------------------------------
+# External repositories
+# ------------------------------------------------------------
+
+THEMES_REPO="https://github.com/DexterArz/Gtk-themes.git"
+VSCODE_REPO="https://github.com/DexterArz/vs-code-themes.git"
+
+THEMES_REPO_DIR="$HOME/.local/share/DOrigin-themes"
+VSCODE_REPO_DIR="$HOME/.local/share/DOrigin-vscode"
 
 # ------------------------------------------------------------
 # Colors
@@ -127,7 +137,6 @@ PACKAGES=()
 
 while IFS= read -r line; do
 
-    # Remove leading/trailing whitespace
     line="$(echo "$line" | xargs)"
 
     # Ignore empty lines
@@ -159,7 +168,7 @@ else
 fi
 
 # ------------------------------------------------------------
-# Create backup directory
+# Create backup
 # ------------------------------------------------------------
 
 TIMESTAMP="$(date '+%Y-%m-%d_%H-%M-%S')"
@@ -181,7 +190,7 @@ backup_directory() {
 
     if [[ -e "$source" ]]; then
 
-        info "Backing up $source"
+        info "Backing up $source..."
 
         cp -a "$source" "$destination"
 
@@ -195,52 +204,139 @@ backup_directory() {
 }
 
 backup_directory "$HOME/.config" ".config"
-backup_directory "$HOME/.local" ".local"
-backup_directory "$HOME/.themes" ".themes"
-backup_directory "$HOME/.vscode-oss" ".vscode-oss"
+backup_directory "$HOME/.local"
 
 # ------------------------------------------------------------
-# Copy dotfiles
+# Copy main .config
 # ------------------------------------------------------------
 
-copy_directory() {
+CONFIG_SOURCE="$DOTFILES_DIR/config/.config"
 
-    local source="$DOTFILES_DIR/$1"
-    local destination="$HOME/$1"
+if [[ -d "$CONFIG_SOURCE" ]]; then
 
-    if [[ -d "$source" ]]; then
+    info "Installing .config..."
 
-        info "Copying $1..."
+    mkdir -p "$HOME/.config"
 
-        mkdir -p "$destination"
+    cp -a "$CONFIG_SOURCE/." "$HOME/.config/"
 
-        cp -a "$source/." "$destination/"
+    success ".config installed."
 
-        success "$1 copied."
+else
+
+    error "$CONFIG_SOURCE does not exist."
+    exit 1
+
+fi
+
+# ------------------------------------------------------------
+# Clone or update repository
+# ------------------------------------------------------------
+
+clone_or_update_repo() {
+
+    local repo="$1"
+    local destination="$2"
+    local name="$3"
+
+    if [[ -d "$destination/.git" ]]; then
+
+        info "$name already exists. Updating..."
+
+        git -C "$destination" pull --ff-only
+
+        success "$name updated."
+
+    elif [[ -e "$destination" ]]; then
+
+        warning "$destination already exists."
+        warning "It is not a Git repository."
+        warning "Skipping $name."
 
     else
 
-        warning "$source does not exist. Skipping."
+        info "Cloning $name..."
+
+        mkdir -p "$(dirname "$destination")"
+
+        git clone "$repo" "$destination"
+
+        success "$name cloned."
 
     fi
 }
 
-copy_directory ".config"
-copy_directory ".local"
-copy_directory ".themes"
-copy_directory ".vscode-oss"
+# ------------------------------------------------------------
+# Themes
+# ------------------------------------------------------------
+
+clone_or_update_repo \
+    "$THEMES_REPO" \
+    "$THEMES_REPO_DIR" \
+    "Themes repository"
+
+THEMES_SOURCE="$THEMES_REPO_DIR/.themes"
+
+if [[ -d "$THEMES_SOURCE" ]]; then
+
+    info "Installing themes..."
+
+    mkdir -p "$HOME/.themes"
+
+    cp -a "$THEMES_SOURCE/." "$HOME/.themes/"
+
+    success "Themes installed."
+
+else
+
+    warning "$THEMES_SOURCE does not exist."
+    warning "Skipping themes."
+
+fi
+
+# ------------------------------------------------------------
+# VS Code
+# ------------------------------------------------------------
+
+clone_or_update_repo \
+    "$VSCODE_REPO" \
+    "$VSCODE_REPO_DIR" \
+    "VS Code repository"
+
+VSCODE_SOURCE="$VSCODE_REPO_DIR/.vs"
+
+if [[ -d "$VSCODE_SOURCE" ]]; then
+
+    info "Installing VS Code configuration..."
+
+    mkdir -p "$HOME/.vs"
+
+    cp -a "$VSCODE_SOURCE/." "$HOME/.vs/"
+
+    success "VS Code configuration installed."
+
+else
+
+    warning "$VSCODE_SOURCE does not exist."
+    warning "Skipping VS Code configuration."
+
+fi
 
 # ------------------------------------------------------------
 # Finished
 # ------------------------------------------------------------
 
 echo
+
 echo -e "${GREEN}========================================${RESET}"
-echo -e "${GREEN}     Dotfiles installation complete     ${RESET}"
+echo -e "${GREEN}     DOrigin installation complete     ${RESET}"
 echo -e "${GREEN}========================================${RESET}"
+
 echo
 
-echo "Dotfiles: $DOTFILES_DIR"
-echo "Backup:   $BACKUP_PATH"
+echo "Config:  $CONFIG_SOURCE"
+echo "Themes:  $HOME/.themes"
+echo "VS Code: $HOME/.vs"
+echo "Backup:  $BACKUP_PATH"
 
 echo
