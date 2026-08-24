@@ -1,0 +1,120 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+
+    "logo": {
+        "type": "auto",
+        "padding": {
+            "right": 4
+        }
+    },
+
+    "display": {
+        "separator": "  "
+    },
+
+    "modules": [
+        {
+            "type": "title"
+        },
+
+        {
+            "type": "custom",
+            "format": "╭─ SYSTEM ───────────────────────────────────────────────╮"
+        },
+
+        {
+            "type": "os",
+            "key": " 󰣇",
+            "keyColor": "blue"
+        },
+        {
+            "type": "host",
+            "key": " 󰌢",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "kernel",
+            "key": " 󰌽",
+            "keyColor": "green"
+        },
+        {
+            "type": "uptime",
+            "key": " 󰅐",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "packages",
+            "key": " 󰏖",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "shell",
+            "key": " 󰆍",
+            "keyColor": "red"
+        },
+
+        {
+            "type": "custom",
+            "format": "├─ ENVIRONMENT ──────────────────────────────────────────┤"
+        },
+
+        {
+            "type": "display",
+            "key": " 󰍹",
+            "keyColor": "blue"
+        },
+        {
+            "type": "de",
+            "key": " 󰧨",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "wm",
+            "key": " 󰖲",
+            "keyColor": "green"
+        },
+        {
+            "type": "wmtheme",
+            "key": " 󰉼",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "theme",
+            "key": " 󰉼",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "terminal",
+            "key": " ",
+            "keyColor": "red"
+        },
+
+        {
+            "type": "custom",
+            "format": "├─ HARDWARE ─────────────────────────────────────────────┤"
+        },
+
+        {
+            "type": "cpu",
+            "key": " 󰍛",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "key": " 󰢮",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": " 󰍛",
+            "keyColor": "yellow"
+        },
+
+        {
+            "type": "custom",
+            "format": "╰────────────────────────────────────────────────────────╯"
+        },
+
+        "colors"
+    ]
+}
