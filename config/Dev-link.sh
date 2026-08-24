@@ -46,6 +46,7 @@ nvim
 nwg-look
 rofi
 starship.toml
+fastfetch
 swaync
 VSCodium
 wallust

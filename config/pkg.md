@@ -1,6 +1,7 @@
 bluemen 
 hyprlock 
-nvim 
+nvim
+fastfetch
 fish 
 cava
 awww
