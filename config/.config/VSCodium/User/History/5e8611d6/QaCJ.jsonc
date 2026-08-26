@@ -1,0 +1,15 @@
+{
+   "bluetooth": {
+    "format": "<span font_family='Material Symbols Rounded'>bluetooth</span> <span>{ifname}</span>",
+    "format-on": "",
+    "format-off": "󰂲",
+    "format-disabled": "",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip": true,
+    "tooltip-format": "{controller_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "on-click": "blueman-manager",
+    "on-click-right": "bluetuith"
+}
+}

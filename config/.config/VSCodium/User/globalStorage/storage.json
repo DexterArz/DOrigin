@@ -1,50 +1,54 @@
 {
     "telemetry.sqmId": "",
     "telemetry.machineId": "e5f693d7aa983c506f2c5f0036139e54a7dac704e8c8b5cdf347f2dcc67dbe46",
-    "telemetry.devDeviceId": "d322c05e-7694-4d47-9d1d-b5dc5daca019",
+    "telemetry.devDeviceId": "305df8ef-7365-407c-92a6-e6a9b65a2a02",
     "backupWorkspaces": {
         "workspaces": [],
         "folders": [
             {
-                "folderUri": "file:///home/d3xt010/Documents"
+                "folderUri": "file:///home/d3xt010/.config/waybar/layouts/DEX%20%28Copy%29"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1787487122599"
-            }
-        ]
+        "emptyWindows": []
     },
     "windowControlHeight": 36,
     "profileAssociations": {
         "workspaces": {
-            "file:///home/d3xt010/Documents": "__default__profile__"
+            "file:///home/d3xt010/Documents": "__default__profile__",
+            "file:///home/d3xt010/Dorigin": "__default__profile__",
+            "file:///home/d3xt010/Downloads/dotfiles-main_config-waybar/dotfiles": "__default__profile__",
+            "file:///home/d3xt010/Documents/d3xt010": "__default__profile__",
+            "file:///home/d3xt010/.config/waybar": "__default__profile__",
+            "file:///home/d3xt010/.config/hypr/modules": "__default__profile__",
+            "file:///home/d3xt010/.config/waybar/layouts/DEX%20%28Copy%29": "__default__profile__"
         },
-        "emptyWindows": {
-            "1787487122599": "__default__profile__"
-        }
+        "emptyWindows": {}
     },
     "theme": "vs-dark",
-    "themeBackground": "#1e1e1e",
+    "themeBackground": "#212121",
     "windowSplash": {
         "zoomLevel": 1,
         "baseTheme": "vs-dark",
         "colorInfo": {
             "foreground": "#cccccc",
-            "background": "#1e1e1e",
-            "editorBackground": "#1e1e1e",
-            "titleBarBackground": "#3c3c3c",
-            "activityBarBackground": "#333333",
-            "sideBarBackground": "#252526",
-            "statusBarBackground": "#007acc",
-            "statusBarNoFolderBackground": "#68217a"
+            "background": "#212121",
+            "editorBackground": "#212121",
+            "titleBarBackground": "#212121",
+            "titleBarBorder": "rgba(33, 33, 33, 0.38)",
+            "activityBarBackground": "#212121",
+            "activityBarBorder": "rgba(33, 33, 33, 0.38)",
+            "sideBarBackground": "#212121",
+            "sideBarBorder": "rgba(33, 33, 33, 0.38)",
+            "statusBarBackground": "#212121",
+            "statusBarBorder": "rgba(33, 33, 33, 0.38)",
+            "statusBarNoFolderBackground": "#212121"
         },
         "layoutInfo": {
             "sideBarSide": "left",
             "editorPartMinWidth": 220,
             "titleBarHeight": 0,
             "activityBarWidth": 48,
-            "sideBarWidth": 0,
+            "sideBarWidth": 261,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 0,
             "windowBorder": false
@@ -52,23 +56,52 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/d3xt010/.config/VSCodium/Backups/1787487122599",
+            "folder": "file:///home/d3xt010/.config/waybar/layouts/DEX%20%28Copy%29",
+            "backupPath": "/home/d3xt010/.config/VSCodium/Backups/45640e5bee0762b38dd3c55956dc2d42",
             "uiState": {
                 "mode": 0,
                 "x": 0,
                 "y": 0,
                 "width": 633,
-                "height": 507
+                "height": 1015
             }
         },
         "openedWindows": []
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 244,
-            "auxiliaryBarWidth": 300,
+            "sideBarWidth": 261,
+            "auxiliaryBarWidth": 170,
             "workspaces": {
                 "bd5e867fca064a44d7f44b78d1350d37": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "3a9bf73e073ca48c649f3882b51de5c5": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "db2d1dd33283725804b311cb77e68606": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "42df82b86b27949c573c53ff5290b6ea": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "e2ad80c0e2b13d1494ef38f051ff4a0c": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "8384585b9fefc0c8f9ac76b82429627b": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7e1cf9444f9372a1bc2d5a460e90604c": {
+                    "sideBarVisible": false,
+                    "auxiliaryBarVisible": false
+                },
+                "cc75e6b6ff3902fa65051eb1d1eaf374": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }
@@ -135,6 +168,17 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/d3xt010/.config/waybar/layouts/DEX%20%28Copy%29",
+                                        "path": "/home/d3xt010/.config/waybar/layouts/DEX (Copy)",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/waybar/layouts/DEX (Copy)"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/d3xt010/Documents",
                                         "path": "/home/d3xt010/Documents",
                                         "scheme": "file"
@@ -143,18 +187,106 @@
                                     "label": "~/Documents"
                                 },
                                 {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/d3xt010/.config/hypr/modules",
+                                        "path": "/home/d3xt010/.config/hypr/modules",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/hypr/modules"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/d3xt010/.config/waybar",
+                                        "path": "/home/d3xt010/.config/waybar",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/waybar"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/d3xt010/Documents/d3xt010",
+                                        "path": "/home/d3xt010/Documents/d3xt010",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Documents/d3xt010"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/d3xt010/Downloads/dotfiles-main_config-waybar/dotfiles",
+                                        "path": "/home/d3xt010/Downloads/dotfiles-main_config-waybar/dotfiles",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Downloads/dotfiles-main_config-waybar/dotfiles"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/d3xt010/Dorigin",
+                                        "path": "/home/d3xt010/Dorigin",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Dorigin"
+                                },
+                                {
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
-                                        "external": "file:///home/d3xt010/.config/hypr/hyprlock.conf",
-                                        "path": "/home/d3xt010/.config/hypr/hyprlock.conf",
+                                        "external": "file:///home/d3xt010/.config/hypr/monitors.conf",
+                                        "path": "/home/d3xt010/.config/hypr/monitors.conf",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
-                                    "label": "~/.config/hypr/hyprlock.conf"
+                                    "label": "~/.config/hypr/monitors.conf"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/d3xt010/Downloads/material-design-icons-4.0.0/font/README.md",
+                                        "path": "/home/d3xt010/Downloads/material-design-icons-4.0.0/font/README.md",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Downloads/material-design-icons-4.0.0/font/README.md"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/d3xt010/.gitconfig",
+                                        "path": "/home/d3xt010/.gitconfig",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.gitconfig"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/d3xt010/.config/waybar/config.jsonc",
+                                        "path": "/home/d3xt010/.config/waybar/config.jsonc",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.config/waybar/config.jsonc"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -224,7 +356,8 @@
                     },
                     {
                         "id": "workbench.action.toggleAutoSave",
-                        "label": "A&&uto Save"
+                        "label": "A&&uto Save",
+                        "checked": true
                     },
                     {
                         "id": "submenuitem.MenubarPreferencesMenu",
@@ -295,6 +428,10 @@
                     {
                         "id": "workbench.action.closeActiveEditor",
                         "label": "&&Close Editor"
+                    },
+                    {
+                        "id": "workbench.action.closeFolder",
+                        "label": "Close &&Folder"
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -489,7 +626,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "&&Primary Side Bar"
+                                    "label": "&&Primary Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
@@ -841,8 +979,7 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back",
-                        "enabled": false
+                        "label": "&&Back"
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -851,8 +988,7 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location",
-                        "enabled": false
+                        "label": "&&Last Edit Location"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1373,6 +1509,11 @@
             "workbench.action.closeActiveEditor": {
                 "label": "Ctrl+W",
                 "userSettingsLabel": "ctrl+w"
+            },
+            "workbench.action.closeFolder": {
+                "label": "Ctrl+K F",
+                "isNative": false,
+                "userSettingsLabel": "ctrl+k f"
             },
             "workbench.action.closeWindow": {
                 "label": "Alt+F4",

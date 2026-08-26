@@ -1,0 +1,17 @@
+{
+    "network": {
+        "interface": "wlp115s0",
+        "format": "{ifname}",
+        "format-wifi": ""format": "<span font_family='Material Symbols Rounded' font_size='16pt' foreground='#89b4fa'>wifi</spam>{essid}",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) 󰤨",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "kitty -e nmtui",
+        "max-length":9
+        
+    }
+}
+

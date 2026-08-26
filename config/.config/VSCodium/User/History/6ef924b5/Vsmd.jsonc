@@ -1,0 +1,26 @@
+{
+	"battery": {
+		// "bat": "BAT2",
+		"interval": 60,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"events": {
+			"on-discharging-warning": "notify-send -u normal 'Low Battery'",
+			"on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+			"on-charging-100": "notify-send -u normal 'Battery Full!'",
+			"on-discharging": "notify-send -u normal 'Power Switch' Discharging",
+			"on-charging": "notify-send -u normal 'Power Switch' Charging'"
+		},
+		"format": "{icon}",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"<span font_family='Material Symbols Rounded'>battery_android_6</span>"
+			// "<span font_family='Material Symbols Rounded'>battery_android_full</span>"
+		],
+		"max-length": 25
+	}
+}

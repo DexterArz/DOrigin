@@ -1,0 +1,35 @@
+{
+  "include": [
+    "modules/workspaces.jsonc",
+    "modules/clock.jsonc",
+    "modules/PPD.jsonc",
+    "modules/battery.jsonc",
+    "modules/media.jsonc",
+    "modules/audio.jsonc",
+    "modules/power.jsonc",
+    "modules/bluetooth.jsonc",
+    "modules/network.jsonc",
+    "modules/inhibitor.jsonc",
+    "modules/notification.jsonc"
+  ],
+  "width": 750,
+  "margin-top": 7,
+  "layer": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/media"
+  ],
+  "modules-center": [
+    "custom/notification",
+    "clock"
+  ],
+  "modules-right": [
+    "group/audio",
+    "idle_inhibitor",
+    "bluetooth",
+    "network",
+    "battery",
+    "power-profiles-daemon",
+    "group/power"
+  ]
+}

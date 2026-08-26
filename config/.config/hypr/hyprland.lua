@@ -1,4 +1,4 @@
-require("modules.monitors")
+--require("modules.monitors")
 require("modules.binds")
 require("modules.autostart")
 require("modules.env")
@@ -9,4 +9,4 @@ require("modules.input")
 require("modules.rules")
 require("modules.layouts")
 require("modules.animations")
-
+require("modules.3monitors")

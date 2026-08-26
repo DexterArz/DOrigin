@@ -12,7 +12,7 @@
     "modules/inhibitor.jsonc",
     "modules/notification.jsonc"
   ],
-  "width": 1300,
+  "width": 1080,
   "margin-top": 7,
   "layer": "top",
   "modules-left": [

@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Nord Wave",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.statusBar.visible": false,
   "window.zoomLevel": 1,
@@ -12,7 +12,7 @@
   "workbench.layoutControl.enabled": false,
   "workbench.navigationControl.enabled": false,
   "window.commandCenter": false,
-  "window.menuBarVisibility": "toggle",
+  "window.menuBarVisibility": "hidden",
   "window.titleBarStyle": "native",
   "editor.fontFamily": "JetBrainsMono Nerd Font Propo",
   "editor.padding.bottom": 17,
@@ -22,5 +22,15 @@
   "editor.cursorStyle": "block",
   "editor.smoothScrolling": true,
   "workbench.list.smoothScrolling": true,
-  "terminal.integrated.smoothScrolling": true
+  "terminal.integrated.smoothScrolling": true,
+  "files.autoSave": "afterDelay",
+  "explorer.confirmDelete": false,
+  "workbench.productIconTheme": "material-product-icons",
+  "git-autoconfig.configList": [
+    {
+      "user.email": "dexter.78ar@gmail.com",
+      "user.name": "DexterArz"
+    }
+  ],
+  "editor.fontSize": 12.7
 }
